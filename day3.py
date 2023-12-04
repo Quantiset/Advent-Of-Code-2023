@@ -21,7 +21,7 @@ def main():
     actual_numbers = []
     numbers = []
     symbols = []
-    for line_idx, line in enumerate(data.split("\n")):
+    for line_idx, line in enumerate(data_lines):
         for word_idx, char in enumerate(line):
             if char.isdigit():
                 numbers.append([word_idx, line_idx])
@@ -103,11 +103,9 @@ def main():
                         num_numbers += 1
             
             if num_numbers == 2:
-                gear_sums += gear_ratio
-                
-                    
+                gear_sums += gear_ratio           
     
-    print(gear_sums)
+    print(sum, gear_sums)
 
 
 main()
