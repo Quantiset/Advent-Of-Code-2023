@@ -22,7 +22,6 @@ def recur_card_count(card_idx, amount) -> int:
     sum = 1
     for i in range(1, amount+1):
         add_val = recur_card_count(card_idx+i, -1)
-        #print("adding", add_val, "on card", card_idx+i+1)
         sum += add_val
     return sum
 
