@@ -1,7 +1,7 @@
 import constants
 
 data = constants.day6
-data_lines = data.split("\n")
+data_lines = data.split("\n") 
 
 def main():
     times = list(map(int, list(filter(None, data_lines[0][7:].split(" ")))))
