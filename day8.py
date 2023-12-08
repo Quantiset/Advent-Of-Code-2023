@@ -6,12 +6,6 @@ data_lines = data.split("\n")[2:]
 
 step_to_int = {"R": 1, "L": 0}
 
-def lcm(inp: list):
-    a = inp[0]
-    for i in inp:
-        a = math.lcm(a, i)
-    return a
-
 def main():
     maps = {}
     steps_instructions = data.split("\n")[0]
@@ -29,7 +23,7 @@ def main():
             curr = maps[curr][step_to_int[step_dir]]
             steps += 1
 
-        print(steps)
+        return steps
     
     curr_list = [a for a in [z.split(" = ")[0] for z in data_lines] if a[2]=="A"]
     finished_currs = {}
@@ -42,6 +36,6 @@ def main():
             if curr[2] == "Z":
                 finished_currs[curr] = steps
     
-    print(lcm(list(finished_currs.values())))
+    print(p1(), math.lcm(*list(finished_currs.values())))
 
 main()
