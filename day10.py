@@ -14,6 +14,8 @@ pipe_to_connections = {
     "F": [[1,0],[0,1]],
 }
 
+# Pipe is just a struct with a pos: int[2], char: char, dist: int, to: Pipe
+
 class Pipe:
     char: str = ""
     dist: int = 0
