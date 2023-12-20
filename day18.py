@@ -142,18 +142,19 @@ def main():
         pos2 = 0
         ans2 = 1
         for char, steps, col in vertices:
-            char = dirs[char]
-            pos += steps * char[0]
-            ans += steps * (char[1]*pos+0.5)
+            dir = dirs[char]
+            pos += steps * dir[0]
+            ans += steps * (dir[1]*pos+0.5)
         
         for char, steps, col in vertices:
-            char = dirs[col[7]]
+            dir = dirs[col[7]]
             steps = int(col[2:7], 16)
-            pos += steps * char[0]
-            ans += steps * (char[1]*pos+0.5)
+            
+            pos2 += steps * dir[0]
+            ans2 += steps * (dir[1]*pos2+0.5)
         
-        print(ans) 
+        ans, ans2 = int(ans), int(ans2)
 
-
+        print(ans, ans2) 
 
 main()
